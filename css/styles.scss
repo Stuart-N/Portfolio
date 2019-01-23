@@ -1,0 +1,121 @@
+/*DESKTOP STYLES*/
+
+/* Global */
+
+/* Background colours */
+$purple-dark: #505CC1;
+$purple-light: #546ED0;
+$gray-dark: #292929;
+$gray-light: #3D3D3D;
+$green-dark: #5CDB95;
+$green-light: #68EDA4;
+
+/* Fonts */
+$font-main: Dosis, sans-serif;
+$font-greeting: Noto Sans SC, sans-serif;
+/*$font-selfintro: */
+
+/* Removes all margins, borders and padding globally */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
+
+
+%section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+
+
+/* Section One - Landing */
+#section-one {
+  @extend %section;
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 51.38%, #E8E8E8 95.58%);
+}
+
+#nav-ul {
+  display: flex;
+  justify-content:space-around;
+  list-style-type:none;
+  a {
+    text-decoration: none;
+  }
+}
+
+
+/* Section Two - Who I Am */
+#section-two {
+  @extend %section;
+  background-image: linear-gradient(170deg, $purple-dark 62%, $purple-light 62%);
+}
+
+
+/* Section Three - Skill Set */
+#section-three {
+  @extend %section;
+  background-image: linear-gradient(170deg, $gray-dark 62%, $gray-light 62%);
+}
+
+
+/* Section Four - Projects */
+#section-four {
+  @extend %section;
+  background-image: linear-gradient(170deg, $green-dark 62%, $green-light 62%);
+}
+
+
+/* Section Five - Contact */
+#section-five {
+  @extend %section;
+  background-color: dodgerblue;
+  background-image: linear-gradient(180deg, #020059 0%, rgba(255, 255, 255, 0) 100%), url('../images/SH2.jpg');
+  filter: blur(7px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#v-tail {
+  height: 15vh;
+  background-color: $green-light;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  /*box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7);*/
+  /*filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.5))*/
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+/* start of large tablet styles */
+
+}
+
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+
+}
+
+@media screen and (max-width: 479px) {
+/* start of phone styles */
+
+}
