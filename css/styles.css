@@ -1,38 +1,165 @@
 /*DESKTOP STYLES*/
 /* Global */
-/* Background colours */
+/* Colours */
 /* Fonts */
-/*$font-selfintro: */
 /* Removes all margins, borders and padding globally */
 * {
   margin: 0;
   border: 0;
   padding: 0; }
 
+/* Sets scroll behaviour and snapping */
 html {
   scroll-behavior: smooth; }
 
 body {
   scroll-snap-type: y mandatory; }
 
+/* Defines common attributes of each section */
 #section-one, #section-two, #section-three, #section-four, #section-five {
   height: 100vh;
-  scroll-snap-align: start; }
+  scroll-snap-align: start;
+  /*PUT THIS INTO ITS OWN EXTENSION*/ }
+  #section-one h1, #section-two h1, #section-three h1, #section-four h1, #section-five h1 {
+    font-family: Dosis, sans-serif;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 64px;
+    text-align: center; }
 
 /* Section One - Landing */
 #section-one {
-  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 51.38%, #E8E8E8 95.58%); }
+  background-color: midnightblue;
+  background-image: linear-gradient(180deg, #0B1463 0%, rgba(119, 118, 166, 0.28) 50%, rgba(238, 238, 238, 0.6) 97%), url("../images/SH Gaussian Blur.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#nav-div {
+  height: 5vh; }
 
 #nav-ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none; }
   #nav-ul a {
-    text-decoration: none; }
+    text-decoration: none;
+    font-family: Varela Round, sans-serif;
+    font-size: 12px;
+    color: #969696;
+    transition: color 0.3s; }
+  #nav-ul a:visited {
+    color: #969696; }
+  #nav-ul a::before,
+  #nav-ul a::after {
+    display: inline-block;
+    opacity: 0;
+    /*-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;*/
+    transition: transform 0.3s, opacity 0.2s; }
+  #nav-ul a::before {
+    margin-right: 10px;
+    content: '[';
+    /*-webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);*/
+    transform: translateX(20px); }
+  #nav-ul a::after {
+    margin-left: 10px;
+    content: ']';
+    /*-webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);*/
+    transform: translateX(-20px); }
+  #nav-ul a:hover {
+    color: white; }
+  #nav-ul a:hover::before,
+  #nav-ul a:hover::after,
+  #nav-ul a:focus::before,
+  #nav-ul a:focus::after {
+    opacity: 1;
+    /*-webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);*/
+    transform: translateX(0px); }
+
+.nav-element {
+  padding: 20px; }
+
+.container {
+  width: 100vw;
+  display: flex; }
+
+#figurine {
+  width: 50vw;
+  background-image: url("../Inspiration/jon-exploded-face-on-1.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 95vh; }
+
+#greeting {
+  width: 50vw; }
+  #greeting h1 {
+    font-size: 144px;
+    font-family: Noto Sans SC, sans-serif;
+    color: white; }
+  #greeting h2 {
+    color: #29FFE0;
+    font-size: 66px;
+    font-family: Varela Round, sans-serif;
+    letter-spacing: 0.07em; }
+  #greeting h4 {
+    color: #fffefc;
+    font-size: 34px;
+    font-family: Varela Round, sans-serif;
+    line-height: 50px; }
 
 /* Section Two - Who I Am */
 #section-two {
   background-image: linear-gradient(170deg, #505CC1 62%, #546ED0 62%); }
+
+#blurb {
+  height: 100%;
+  width: 50vw; }
+
+#snapshots {
+  height: 100%;
+  width: 50vw; }
+
+#snapshot-one {
+  background-image: url("../images/Stuart1.jpg");
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: scale(0.7) rotate(3.25deg);
+  /* CHECK THESE - MAKE THEM DRY */
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh; }
+
+#snapshot-two {
+  background-image: url("../images/Stuart2.jpg");
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: scale(0.6) rotate(-1.55deg);
+  /* CHECK THESE */
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh; }
+
+#snapshot-three {
+  background-image: url("../images/Stuart3.JPG");
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(5.95deg);
+  /* CHECK THESE */
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh; }
 
 /* Section Three - Skill Set */
 #section-three {
@@ -43,21 +170,10 @@ body {
   background-image: linear-gradient(170deg, #5CDB95 62%, #68EDA4 62%); }
 
 /* Section Five - Contact */
-#section-five {
-  background-color: dodgerblue;
-  background-image: linear-gradient(180deg, #020059 0%, rgba(255, 255, 255, 0) 100%), url("../images/SH2.jpg");
-  filter: blur(7px);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
 #v-tail {
-  height: 15vh;
+  height: 35vh;
   background-color: #68EDA4;
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
-  /*box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7);*/
-  /*filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.5))*/ }
+  clip-path: polygon(0 0, 50% 100%, 100% 0); }
 
 @media screen and (max-width: 991px) {
   /* start of large tablet styles */ }
