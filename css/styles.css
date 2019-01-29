@@ -96,40 +96,68 @@ body {
   display: flex; }
 
 #figurine {
-  width: 50vw;
+  width: 42vw;
   background-image: url("../Inspiration/jon-exploded-face-on-1.png");
   background-attachment: scroll;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: 4vw;
   height: 95vh; }
 
 #greeting {
-  width: 50vw;
-  margin-top: 2vh; }
+  width: 58vw;
+  margin-top: 5vh; }
   #greeting h1 {
-    font-size: 144px;
+    font-size: 17vmin;
     font-family: Noto Sans SC, sans-serif;
-    color: white; }
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
   #greeting h2 {
-    color: #29FFE0;
-    font-size: 66px;
+    color: #00ffe0;
+    font-size: 10vmin;
     font-family: Varela Round, sans-serif;
-    letter-spacing: 0.07em; }
+    letter-spacing: 0.08em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }
   #greeting h4 {
     color: #fffefc;
-    font-size: 34px;
+    font-size: 4.5vmin;
     font-family: Varela Round, sans-serif;
-    line-height: 50px; }
+    line-height: 8vmin;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); }
 
 #text-offset {
-  margin-left: 0.5vw; }
+  margin-left: 0.5vw;
+  margin-top: 28vh; }
 
 #noun-labels {
   margin-top: 4vh; }
 
+.word {
+  position: absolute;
+  width: 50%;
+  opacity: 0; }
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px; }
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.letter.behind {
+  transform: rotateX(-90deg); }
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
 /* Section Two - Who I Am */
 #section-two {
-  background-image: linear-gradient(170deg, #505CC1 62%, #546ED0 62%); }
+  background-image: linear-gradient(170deg, #2f52b5 62%, #4267d1 62%); }
 
 #blurb {
   height: 100%;
@@ -184,6 +212,26 @@ body {
 /* Section Three - Skill Set */
 #section-three {
   background-image: linear-gradient(170deg, #292929 62%, #3D3D3D 62%); }
+  #section-three .container {
+    height: 80vh;
+    align-content: space-around;
+    flex-wrap: wrap; }
+
+.skill {
+  flex: 0 0 16vh;
+  padding: 0 3vw 0 3vw; }
+  .skill h5 {
+    text-align: center;
+    font-family: Varela Round, sans-serif;
+    color: #E3E3E3;
+    font-size: 2vmin;
+    margin-top: 2vh; }
+
+.png {
+  width: 15vh; }
+
+#pen-paper {
+  color: #FFC1C1; }
 
 /* Section Four - Projects */
 #section-four {

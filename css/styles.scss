@@ -3,13 +3,13 @@
 /* Global */
 
   /* Colours */
-  $purple-dark: #505CC1;
-  $purple-light: #546ED0;
+  $purple-dark: #2f52b5;
+  $purple-light: #4267d1;
   $gray-dark: #292929;
   $gray-light: #3D3D3D;
   $green-dark: #5CDB95;
   $green-light: #68EDA4;
-  $light-blue: #29FFE0;
+  $light-blue: #00ffe0;
   $off-white-1: #fffefc;
   $off-white-2: #E3E3E3;
   $nav-dark: #969696;
@@ -139,43 +139,119 @@
   }
 
   #figurine {
-    width: 50vw;
+    width: 42vw;
     background-image: url("../Inspiration/jon-exploded-face-on-1.png");
     background-attachment: scroll;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: 4vw;
     height: 95vh;
   }
 
   #greeting {
-    width: 50vw;
-    margin-top: 2vh;
+    width: 58vw;
+    margin-top: 5vh;
     h1 {
-      font-size: 144px;
+      font-size: 17vmin;
       font-family: $font-greeting;
       color: white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     h2 {
       color: $light-blue;
-      font-size: 66px;
+      font-size: 10vmin;
       font-family: $font-landing;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     }
     h4{
       color: $off-white-1;
-      font-size: 34px;
+      font-size: 4.5vmin;
       font-family: $font-landing;
-      line-height: 50px;
+      line-height: 8vmin;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
     }
   }
 
   #text-offset {
     margin-left: 0.5vw;
+    margin-top: 28vh;
   }
 
   #noun-labels {
     margin-top: 4vh;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .word {
+    position: absolute;
+    width: 50%;
+    opacity: 0;
+  }
+
+  .letter {
+    display: inline-block;
+    position: relative;
+    float: left;
+    transform: translateZ(25px);
+    transform-origin: 50% 50% 25px;
+  }
+
+  .letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .letter.behind {
+    transform: rotateX(-90deg);
+  }
+
+  .letter.in {
+    transform: rotateX(0deg);
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Section Two - Who I Am */
   #section-two {
@@ -260,8 +336,33 @@
     h1{
       @extend %section-title;
     }
+
+    .container {
+      height: 80vh;
+      align-content: space-around;
+      flex-wrap: wrap;
+    }
   }
 
+  .skill {
+    flex: 0 0 16vh;
+    padding: 0 3vw 0 3vw;
+    h5 {
+      text-align: center;
+      font-family: $font-landing;
+      color: $off-white-2;
+      font-size: 2vmin;
+      margin-top: 2vh;
+    }
+  }
+
+  .png {
+    width: 15vh;
+  }
+
+  #pen-paper {
+    color: $link;
+  }
 
 /* Section Four - Projects */
   #section-four {
