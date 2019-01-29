@@ -10,8 +10,11 @@
   $green-dark: #5CDB95;
   $green-light: #68EDA4;
   $light-blue: #29FFE0;
-  $off-white: #fffefc;
+  $off-white-1: #fffefc;
+  $off-white-2: #E3E3E3;
   $nav-dark: #969696;
+  $link: #FFC1C1;
+  $link-hover: #FFB4B4;
 
   /* Fonts */
   $font-main: Dosis, sans-serif;
@@ -37,18 +40,18 @@
   /* Defines common attributes of each section */
   %section {
     height: 100vh;
+    overflow: scroll;
     scroll-snap-align: start;
-
-    /*PUT THIS INTO ITS OWN EXTENSION*/
-    h1 {
-      font-family: $font-main;
-      color: white;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-size: 64px;
-      text-align: center;
-    }
   }
 
+  %section-title {
+    font-family: $font-main;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 64px;
+    text-align: center;
+    padding: 2vh;
+  }
 
 /* Section One - Landing */
   #section-one {
@@ -124,8 +127,14 @@
     padding: 20px;
   }
 
-  .container {
+  .container-landing {
     width: 100vw;
+    display: flex;
+  }
+
+  .container {
+    margin-left: 5vw;
+    margin-right: 5vw;
     display: flex;
   }
 
@@ -140,6 +149,7 @@
 
   #greeting {
     width: 50vw;
+    margin-top: 2vh;
     h1 {
       font-size: 144px;
       font-family: $font-greeting;
@@ -152,73 +162,104 @@
       letter-spacing: 0.07em;
     }
     h4{
-      color: $off-white;
+      color: $off-white-1;
       font-size: 34px;
       font-family: $font-landing;
       line-height: 50px;
     }
   }
 
+  #text-offset {
+    margin-left: 0.5vw;
+  }
+
+  #noun-labels {
+    margin-top: 4vh;
+  }
+
 /* Section Two - Who I Am */
   #section-two {
     @extend %section;
     background-image: linear-gradient(170deg, $purple-dark 62%, $purple-light 62%);
+
+    h1{
+      @extend %section-title;
+    }
   }
 
   #blurb {
     height: 100%;
-    width: 50vw;
+    width: 60vw;
+    padding: 2em;
+    p {
+      text-align: justify;
+      font-family: $font-landing;
+      color: $off-white-2;
+      font-size: 2vmin;
+    }
+    a {
+      color: $link;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $link-hover;
+    }
+    a:visited {
+      color: $link;
+    }
   }
 
   #snapshots {
-    height: 100%;
-    width: 50vw;
+    height: inherit;
+    width: 40vw;
+    position: relative;
+    padding: 2em;
+    /*object-fit: contain;*/
+  }
+
+  %snapshot {
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /*height:45vh;*/
+    /*max-height: 100%;*/
+    max-width: 90%;
+    position: absolute;
+    transform-origin: right;
   }
 
   #snapshot-one {
-    background-image: url("../images/Stuart1.jpg");
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(0.7) rotate(3.25deg);
-
-    /* CHECK THESE - MAKE THEM DRY */
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:45vh;
+    @extend %snapshot;
+    transform: scale(0.75) rotate(3.25deg);
+    right: 8%;
+    top: 1vw;
   }
 
   #snapshot-two {
-    background-image: url("../images/Stuart2.jpg");
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(0.6) rotate(-1.55deg);
-    /* CHECK THESE */
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:45vh;
+    @extend %snapshot;
+    transform-origin: left;
+    transform: scale(0.65) rotate(-1.55deg);
+    left: 8%;
+    top: 26vh;
   }
 
   #snapshot-three {
-    background-image: url("../images/Stuart3.JPG");
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: rotate(5.95deg);
-    /* CHECK THESE */
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:45vh;
+    @extend %snapshot;
+    transform: scale(0.45) rotate(5.95deg);
+    right: 8%;
+    top: 37vh;
   }
+
 
 /* Section Three - Skill Set */
   #section-three {
     @extend %section;
     background-image: linear-gradient(170deg, $gray-dark 62%, $gray-light 62%);
+
+    h1{
+      @extend %section-title;
+    }
   }
 
 
@@ -226,12 +267,20 @@
   #section-four {
     @extend %section;
     background-image: linear-gradient(170deg, $green-dark 62%, $green-light 62%);
+
+    h1{
+      @extend %section-title;
+    }
   }
 
 
 /* Section Five - Contact */
   #section-five {
     @extend %section;
+
+    h1{
+      @extend %section-title;
+    }
   }
 
   #v-tail {

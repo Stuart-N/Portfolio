@@ -18,14 +18,16 @@ body {
 /* Defines common attributes of each section */
 #section-one, #section-two, #section-three, #section-four, #section-five {
   height: 100vh;
-  scroll-snap-align: start;
-  /*PUT THIS INTO ITS OWN EXTENSION*/ }
-  #section-one h1, #section-two h1, #section-three h1, #section-four h1, #section-five h1 {
-    font-family: Dosis, sans-serif;
-    color: white;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 64px;
-    text-align: center; }
+  overflow: scroll;
+  scroll-snap-align: start; }
+
+#section-two h1, #section-three h1, #section-four h1, #section-five h1 {
+  font-family: Dosis, sans-serif;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 64px;
+  text-align: center;
+  padding: 2vh; }
 
 /* Section One - Landing */
 #section-one {
@@ -84,8 +86,13 @@ body {
 .nav-element {
   padding: 20px; }
 
-.container {
+.container-landing {
   width: 100vw;
+  display: flex; }
+
+.container {
+  margin-left: 5vw;
+  margin-right: 5vw;
   display: flex; }
 
 #figurine {
@@ -97,7 +104,8 @@ body {
   height: 95vh; }
 
 #greeting {
-  width: 50vw; }
+  width: 50vw;
+  margin-top: 2vh; }
   #greeting h1 {
     font-size: 144px;
     font-family: Noto Sans SC, sans-serif;
@@ -113,53 +121,65 @@ body {
     font-family: Varela Round, sans-serif;
     line-height: 50px; }
 
+#text-offset {
+  margin-left: 0.5vw; }
+
+#noun-labels {
+  margin-top: 4vh; }
+
 /* Section Two - Who I Am */
 #section-two {
   background-image: linear-gradient(170deg, #505CC1 62%, #546ED0 62%); }
 
 #blurb {
   height: 100%;
-  width: 50vw; }
+  width: 60vw;
+  padding: 2em; }
+  #blurb p {
+    text-align: justify;
+    font-family: Varela Round, sans-serif;
+    color: #E3E3E3;
+    font-size: 2vmin; }
+  #blurb a {
+    color: #FFC1C1;
+    text-decoration: none; }
+  #blurb a:hover {
+    color: #FFB4B4; }
+  #blurb a:visited {
+    color: #FFC1C1; }
 
 #snapshots {
-  height: 100%;
-  width: 50vw; }
+  height: inherit;
+  width: 40vw;
+  position: relative;
+  padding: 2em;
+  /*object-fit: contain;*/ }
+
+#snapshot-one, #snapshot-two, #snapshot-three {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /*height:45vh;*/
+  /*max-height: 100%;*/
+  max-width: 90%;
+  position: absolute;
+  transform-origin: right; }
 
 #snapshot-one {
-  background-image: url("../images/Stuart1.jpg");
-  border: 2px solid #FFFFFF;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform: scale(0.7) rotate(3.25deg);
-  /* CHECK THESE - MAKE THEM DRY */
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 45vh; }
+  transform: scale(0.75) rotate(3.25deg);
+  right: 8%;
+  top: 1vw; }
 
 #snapshot-two {
-  background-image: url("../images/Stuart2.jpg");
-  border: 2px solid #FFFFFF;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform: scale(0.6) rotate(-1.55deg);
-  /* CHECK THESE */
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 45vh; }
+  transform-origin: left;
+  transform: scale(0.65) rotate(-1.55deg);
+  left: 8%;
+  top: 26vh; }
 
 #snapshot-three {
-  background-image: url("../images/Stuart3.JPG");
-  border: 2px solid #FFFFFF;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform: rotate(5.95deg);
-  /* CHECK THESE */
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 45vh; }
+  transform: scale(0.45) rotate(5.95deg);
+  right: 8%;
+  top: 37vh; }
 
 /* Section Three - Skill Set */
 #section-three {
