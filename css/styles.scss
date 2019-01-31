@@ -15,10 +15,14 @@
   $nav-dark: #969696;
   $link: #FFC1C1;
   $link-hover: #FFB4B4;
+  $envelope-top: #e4ceb8;
+  $envelope-bottom: #d8c6b4;
+  $envelope-side: #ece0d3;
 
   /* Fonts */
-  $font-main: Dosis, sans-serif;
-  $font-landing: Varela Round, sans-serif;
+  /*$font-title: Dosis, sans-serif;*/
+  $font-title: Varela Round, sans-serif;
+  $font-main: Varela Round, sans-serif;
   $font-greeting: Noto Sans SC, sans-serif;
 
   /* Removes all margins, borders and padding globally */
@@ -35,6 +39,7 @@
 
   body {
     scroll-snap-type: y mandatory;
+    background-color: $envelope-side;
   }
 
   /* Defines common attributes of each section */
@@ -45,12 +50,13 @@
   }
 
   %section-title {
-    font-family: $font-main;
+    font-family: $font-title;
     color: white;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 64px;
     text-align: center;
-    padding: 2vh;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
   }
 
 /* Section One - Landing */
@@ -74,7 +80,7 @@
     list-style-type:none;
     a {
       text-decoration: none;
-      font-family: $font-landing;
+      font-family: $font-main;
       font-size: 12px;
       color: $nav-dark;
       transition: color 0.3s;
@@ -160,14 +166,14 @@
     h2 {
       color: $light-blue;
       font-size: 10vmin;
-      font-family: $font-landing;
+      font-family: $font-main;
       letter-spacing: 0.08em;
       text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     }
     h4{
       color: $off-white-1;
       font-size: 4.5vmin;
-      font-family: $font-landing;
+      font-family: $font-main;
       line-height: 8vmin;
       text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
     }
@@ -269,7 +275,7 @@
     padding: 2em;
     p {
       text-align: justify;
-      font-family: $font-landing;
+      font-family: $font-main;
       color: $off-white-2;
       font-size: 2vmin;
     }
@@ -339,17 +345,20 @@
 
     .container {
       height: 80vh;
-      align-content: space-around;
+      align-items: center;
+      justify-content: space-evenly;
       flex-wrap: wrap;
     }
   }
 
+  $skill-size: 14vh;
+
   .skill {
-    flex: 0 0 16vh;
+    flex: 0 0 $skill-size;
     padding: 0 3vw 0 3vw;
     h5 {
       text-align: center;
-      font-family: $font-landing;
+      font-family: $font-main;
       color: $off-white-2;
       font-size: 2vmin;
       margin-top: 2vh;
@@ -357,7 +366,7 @@
   }
 
   .png {
-    width: 15vh;
+    width: $skill-size;
   }
 
   #pen-paper {
@@ -384,13 +393,60 @@
     }
   }
 
-  #v-tail {
-    height: 35vh;
-    background-color: $green-light;
+  #envelope-fold-top {
+    height: 60vh;
+    background-color: $envelope-top;;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
   }
 
+  #envelope-fold-shadow {
+    height: 62vh;
+    background: linear-gradient(to top, rgba(0,0,0,0.45) 0%,rgba(0,0,0,0) 100%);
+    clip-path: polygon(0 0, 50.4% 100%, 100% 0);
+  }
 
+  #envelope-fold-bottom {
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    height: 80vh;
+    width: 100%;
+    background-color: $envelope-bottom;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    p {
+      position: fixed;
+      left: 0;
+      bottom: 1vh;
+      width: 100%;
+      text-align: center;
+      font-family: $font-main;
+      color: $off-white-2;
+      font-size: 2vmin;
+    };
+
+    h3 {
+      position: fixed;
+      left: 0;
+      bottom: 10vh;
+      width: 100%;
+      text-align: center;
+      font-family: $font-main;
+      color: $off-white-2;
+      font-size: 5vmin;
+    }
+  }
+
+  #social-media {
+    position: fixed;
+    left: 0;
+    bottom: 5vh;
+    width: 100%;
+    text-align: center;
+    /*font-family: $font-main;*/
+    color: $off-white-2;
+    font-size: 2vmin;
+  }
 
 
 
