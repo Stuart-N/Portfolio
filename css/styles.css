@@ -1,8 +1,8 @@
 /*DESKTOP STYLES*/
 /* Global */
 /* Colours */
-/*$envelope-side: #ece0d3;*/
 /* Fonts */
+/* Background patterns */
 /* Removes all margins, borders and padding globally */
 * {
   margin: 0;
@@ -15,7 +15,6 @@ html {
 
 body {
   scroll-snap-type: y mandatory;
-  /*background-color: $envelope-side;*/
   background-color: #edebf0;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dfd7ea' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"); }
 
@@ -41,7 +40,6 @@ a span {
   left: 50%;
   width: 3vmin;
   height: 3vmin;
-  /*margin-left: -12px;*/
   border-left: 3px solid #E3E3E3;
   border-bottom: 3px solid #E3E3E3;
   -webkit-transform: rotate(-45deg);
@@ -200,12 +198,13 @@ a span {
 #section-two {
   position: relative;
   z-index: 1;
-  background-image: linear-gradient(170deg, #1b306b 57%, #284597 62%); }
+  background-color: #1b306b;
+  background-image: url("../images/white-diamond.png"); }
 
 #blurb {
   height: 100%;
-  width: 60vw;
-  padding: 1em 2em 2em 2em; }
+  width: 63vw;
+  padding: 1em 3em 2em 2em; }
   #blurb p {
     text-align: justify;
     font-family: Varela Round, sans-serif;
@@ -215,21 +214,21 @@ a span {
   #blurb a {
     color: #FFC1C1;
     text-decoration: none; }
-  #blurb a:hover {
-    color: #FFB4B4; }
   #blurb a:visited {
     color: #FFC1C1; }
 
 .highlight {
-  /*background-color: #fff2ac;*/
-  background-image: linear-gradient(to left, #5cadd4 0%, #1caaca 100%); }
+  background-image: linear-gradient(to left, #bc5cd4 0%, #b03bbe 100%); }
+
+.highlight-strong {
+  background-image: linear-gradient(to left, #de3636 0%, #ca3232 100%);
+  font-size: 2.2vmin; }
 
 #snapshots {
   height: inherit;
   width: 40vw;
   position: relative;
-  padding: 2em;
-  /*object-fit: contain;*/ }
+  padding: 2em 0em 2em 2em; }
 
 #snapshot-one, #snapshot-two, #snapshot-three {
   border: 2px solid #FFFFFF;
@@ -261,7 +260,8 @@ a span {
 #section-three {
   position: relative;
   z-index: 1;
-  background-image: linear-gradient(170deg, #292929 57%, #3D3D3D 62%); }
+  background-color: #292929;
+  background-image: url("../images/white-diamond.png"); }
   #section-three .container {
     height: 80vh;
     align-items: center;
@@ -288,7 +288,8 @@ a span {
 #section-four {
   position: relative;
   z-index: 1;
-  background-image: linear-gradient(170deg, #5CDB95 57%, #68EDA4 62%); }
+  background-color: #601f88;
+  background-image: url("../images/white-diamond.png"); }
 
 /* Section Five - Contact */
 #section-five h1 {
@@ -323,6 +324,18 @@ a span {
     font-family: Varela Round, sans-serif;
     color: #E3E3E3;
     font-size: 2vmin; }
+
+#email {
+  width: 100%;
+  text-align: center; }
+  #email i {
+    font-size: 9vmin;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: #1b306b; }
+  #email i:hover {
+    color: #dc7777;
+    transition-duration: 0.2s; }
 
 #social-media {
   position: fixed;

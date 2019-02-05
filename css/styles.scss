@@ -3,21 +3,20 @@
 /* Global */
 
   /* Colours */
-  $purple-dark: #1b306b;
-  $purple-light: #284597;
+  $blue-dark: #1b306b;
   $gray-dark: #292929;
-  $gray-light: #3D3D3D;
-  $green-dark: #5CDB95;
-  $green-light: #68EDA4;
+  $purple-dark: #601f88;
   $light-blue: #3fe2ff;
   $off-white-1: #fffefc;
   $off-white-2: #E3E3E3;
+  $highlight-lighter: #bc5cd4;
+  $highlight-darker: #b03bbe;
+  $highlight-strong-lighter: #de3636;
+  $highlight-strong-darker: #ca3232;
   $nav-dark: #969696;
   $link: #FFC1C1;
-  $link-hover: #FFB4B4;
   $envelope-top: #e5e1ea;
   $envelope-bottom: #d4ceda;
-  /*$envelope-side: #ece0d3;*/
   $social-media: #1b306b;
   $social-media-hover: #dc7777;
 
@@ -26,6 +25,9 @@
   $font-main: Varela Round, sans-serif;
   $font-greeting: Noto Sans SC, sans-serif;
   $font-envelope: Satisfy, cursive;
+
+  /* Background patterns */
+  $diamonds: url("../images/white-diamond.png");
 
   /* Removes all margins, borders and padding globally */
   * {
@@ -41,7 +43,6 @@
 
   body {
     scroll-snap-type: y mandatory;
-    /*background-color: $envelope-side;*/
     background-color: #edebf0;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dfd7ea' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
   }
@@ -70,7 +71,6 @@
     left: 50%;
     width: 3vmin;
     height: 3vmin;
-    /*margin-left: -12px;*/
     border-left: 3px solid $off-white-2;
     border-bottom: 3px solid $off-white-2;
     -webkit-transform: rotate(-45deg);
@@ -242,18 +242,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   .word {
     position: absolute;
     width: 50%;
@@ -310,7 +298,8 @@
     @extend %section;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(170deg, $purple-dark 57%, $purple-light 62%);
+    background-color: $blue-dark;
+    background-image: $diamonds;
 
     h1{
       @extend %section-title;
@@ -319,8 +308,8 @@
 
   #blurb {
     height: 100%;
-    width: 60vw;
-    padding: 1em 2em 2em 2em;
+    width: 63vw;
+    padding: 1em 3em 2em 2em;
     p {
       text-align: justify;
       font-family: $font-main;
@@ -332,25 +321,25 @@
       color: $link;
       text-decoration: none;
     }
-    a:hover {
-      color: $link-hover;
-    }
     a:visited {
       color: $link;
     }
   }
 
   .highlight {
-      /*background-color: #fff2ac;*/
-      background-image: linear-gradient(to left, #5cadd4 0%, #1caaca 100%);
+      background-image: linear-gradient(to left, $highlight-lighter 0%, $highlight-darker 100%);
+  }
+
+  .highlight-strong {
+      background-image: linear-gradient(to left, $highlight-strong-lighter 0%, $highlight-strong-darker 100%);
+      font-size: 2.2vmin;
   }
 
   #snapshots {
     height: inherit;
     width: 40vw;
     position: relative;
-    padding: 2em;
-    /*object-fit: contain;*/
+    padding: 2em 0em 2em 2em;
   }
 
   %snapshot {
@@ -393,7 +382,8 @@
     @extend %section;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(170deg, $gray-dark 57%, $gray-light 62%);
+    background-color: $gray-dark;
+    background-image: $diamonds;
 
     h1{
       @extend %section-title;
@@ -434,7 +424,8 @@
     @extend %section;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(170deg, $green-dark 57%, $green-light 62%);
+    background-color: $purple-dark;
+    background-image: $diamonds;
 
     h1{
       @extend %section-title;
@@ -485,6 +476,21 @@
       color: $off-white-2;
       font-size: 2vmin;
     };
+  }
+
+  #email {
+    width: 100%;
+    text-align: center;
+    i {
+      font-size: 9vmin;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      color: $social-media;
+    }
+    i:hover {
+        color: $social-media-hover;
+        transition-duration: 0.2s;
+    }
   }
 
   #social-media {
