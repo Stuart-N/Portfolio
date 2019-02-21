@@ -21,8 +21,8 @@
   $social-media-hover: #dc7777;
 
   /* Fonts */
-  $font-title: Varela Round, sans-serif;
-  $font-main: Varela Round, sans-serif;
+  $font-title: Oxygen, sans-serif;
+  $font-main: Oxygen, sans-serif;
   $font-greeting: Noto Sans SC, sans-serif;
   $font-envelope: Satisfy, cursive;
 
@@ -129,7 +129,7 @@
       font-family: $font-main;
       font-size: 12px;
       color: $nav-dark;
-      transition: color 0.3s;
+      transition: all 0.3s;
     }
     a:visited {
       color: $nav-dark;
@@ -162,6 +162,7 @@
 
     a:hover {
       color: white;
+      letter-spacing: 1px;
     }
 
     a:hover::before,
@@ -192,7 +193,7 @@
 
   #figurine {
     width: 42vw;
-    background-image: url("../Inspiration/jon-exploded-face-on-1.png");
+    background-image: url("../images/stuart-cutout-checkered.png");
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: cover;
@@ -429,6 +430,31 @@
 
     h1{
       @extend %section-title;
+    }
+
+    .container {
+      height: 80vh;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+
+  .project {
+    /*flex: 0 0 $project-size;*/
+    padding: 0 3vw 0 3vw;
+    h5 {
+      text-align: center;
+      font-family: $font-main;
+      color: $off-white-2;
+      font-size: 2vmin;
+      margin-top: 2vh;
+    }
+    .macbook{
+      width: 28vw;
+    }
+    .iphone{
+      width: 11vw;
     }
   }
 

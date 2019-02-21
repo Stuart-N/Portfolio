@@ -25,7 +25,7 @@ body {
   scroll-snap-align: start; }
 
 #section-two h1, #section-three h1, #section-four h1, #section-five h1 {
-  font-family: Varela Round, sans-serif;
+  font-family: Oxygen, sans-serif;
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 8vmin;
@@ -86,10 +86,10 @@ a span {
   list-style-type: none; }
   #nav-ul a {
     text-decoration: none;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     font-size: 12px;
     color: #969696;
-    transition: color 0.3s; }
+    transition: all 0.3s; }
   #nav-ul a:visited {
     color: #969696; }
   #nav-ul a::before,
@@ -112,7 +112,8 @@ a span {
     -moz-transform: translateX(-20px);*/
     transform: translateX(-20px); }
   #nav-ul a:hover {
-    color: white; }
+    color: white;
+    letter-spacing: 1px; }
   #nav-ul a:hover::before,
   #nav-ul a:hover::after,
   #nav-ul a:focus::before,
@@ -136,7 +137,7 @@ a span {
 
 #figurine {
   width: 42vw;
-  background-image: url("../Inspiration/jon-exploded-face-on-1.png");
+  background-image: url("../images/stuart-cutout-checkered.png");
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
@@ -154,13 +155,13 @@ a span {
   #greeting h2 {
     color: #3fe2ff;
     font-size: 10vmin;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     letter-spacing: 0.08em;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }
   #greeting h4 {
     color: #fffefc;
     font-size: 4.5vmin;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     line-height: 8vmin;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); }
 
@@ -207,7 +208,7 @@ a span {
   padding: 1em 3em 2em 2em; }
   #blurb p {
     text-align: justify;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     color: #E3E3E3;
     font-size: 1.8vmin;
     line-height: 2.3vmin; }
@@ -273,7 +274,7 @@ a span {
   padding: 0 3vw 0 3vw; }
   .skill h5 {
     text-align: center;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     color: #E3E3E3;
     font-size: 2vmin;
     margin-top: 2vh; }
@@ -290,6 +291,25 @@ a span {
   z-index: 1;
   background-color: #601f88;
   background-image: url("../images/white-diamond.png"); }
+  #section-four .container {
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+
+.project {
+  /*flex: 0 0 $project-size;*/
+  padding: 0 3vw 0 3vw; }
+  .project h5 {
+    text-align: center;
+    font-family: Oxygen, sans-serif;
+    color: #E3E3E3;
+    font-size: 2vmin;
+    margin-top: 2vh; }
+  .project .macbook {
+    width: 28vw; }
+  .project .iphone {
+    width: 11vw; }
 
 /* Section Five - Contact */
 #section-five h1 {
@@ -321,7 +341,7 @@ a span {
     bottom: 1vh;
     width: 100%;
     text-align: center;
-    font-family: Varela Round, sans-serif;
+    font-family: Oxygen, sans-serif;
     color: #E3E3E3;
     font-size: 2vmin; }
 
