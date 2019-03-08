@@ -22,7 +22,10 @@ body {
 #section-one, #section-two, #section-three, #section-four, #section-five {
   height: 100vh;
   overflow: scroll;
-  scroll-snap-align: start; }
+  scroll-snap-align: start;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory; }
 
 #section-two h1, #section-three h1, #section-four h1, #section-five h1 {
   font-family: Oxygen, sans-serif;
@@ -87,6 +90,7 @@ a span {
   #nav-ul a {
     text-decoration: none;
     font-family: Oxygen, sans-serif;
+    font-weight: 700;
     font-size: 12px;
     color: #969696;
     transition: all 0.3s; }
@@ -137,7 +141,7 @@ a span {
 
 #figurine {
   width: 42vw;
-  background-image: url("../images/stuart-cutout-checkered.png");
+  background-image: url("../images/stuart.png");
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,6 +213,7 @@ a span {
   #blurb p {
     text-align: justify;
     font-family: Oxygen, sans-serif;
+    font-weight: 400;
     color: #E3E3E3;
     font-size: 1.8vmin;
     line-height: 2.3vmin; }
@@ -349,7 +354,7 @@ a span {
   width: 100%;
   text-align: center; }
   #email i {
-    font-size: 9vmin;
+    font-size: 12vmin;
     padding-left: 2vw;
     padding-right: 2vw;
     color: #1b306b; }
