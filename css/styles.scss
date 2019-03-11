@@ -400,6 +400,13 @@
       @extend %section-title;
     }
 
+    h5{
+      text-align: center;
+      font-family: $font-main;
+      color: $off-white-2;
+      font-size: 2vmin;
+    }
+
     .container {
       height: 80vh;
       align-items: center;

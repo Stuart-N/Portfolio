@@ -274,6 +274,11 @@ a span {
   z-index: 1;
   background-color: #292929;
   background-image: url("../images/white-diamond.png"); }
+  #section-three h5 {
+    text-align: center;
+    font-family: Oxygen, sans-serif;
+    color: #E3E3E3;
+    font-size: 2vmin; }
   #section-three .container {
     height: 80vh;
     align-items: center;
