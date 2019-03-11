@@ -216,7 +216,7 @@ a span {
     font-weight: 400;
     color: #E3E3E3;
     font-size: 1.6vmin;
-    line-height: 2.4vmin; }
+    line-height: 2.3vmin; }
   #blurb a {
     color: #FFC1C1;
     text-decoration: none; }
@@ -303,7 +303,7 @@ a span {
 
 /* Section Four - Recent Projects */
 #section-four {
-  position: fixed;
+  position: relative;
   z-index: 1;
   background-color: #601f88;
   background-image: url("../images/white-diamond.png"); }

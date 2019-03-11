@@ -320,7 +320,7 @@
       font-weight: 400;
       color: $off-white-2;
       font-size: 1.6vmin;
-      line-height: 2.4vmin;
+      line-height: 2.3vmin;
     }
     a {
       color: $link;
@@ -440,7 +440,7 @@
 /* Section Four - Recent Projects */
   #section-four {
     @extend %section;
-    position: fixed;
+    position: relative;
     z-index: 1;
     background-color: $purple-dark;
     background-image: $diamonds;
